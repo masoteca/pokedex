@@ -1,0 +1,34 @@
+<div class="card" *ngIf="pokemon">
+  <figure>
+    <img src="{{pokemonCoverImage()}}" alt="pokemon_image_front" style="width: 100px; height: 100px;" async>
+  </figure>
+  <div class="card-header" >
+  <h3>{{pokemon.name}}</h3>
+    <p> Tipos: <span *ngFor="let tipo of pokemon.types">{{tipo.type.name}} </span></p>
+</div>
+<div>
+  <h3> Movimmientos que aprende</h3>
+  <ol>
+    <li *ngFor="let mov of pokemon.moves">{{mov.move.name}}</li>
+  </ol>
+</div>
+<div>
+  <h3>Juegos en los que aparece</h3>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>N Pokedex</th>
+    </tr>
+    <tr *ngFor="let item of pokemon.game_indices; let i = index;" >
+      <td>{{i + 1}}</td>
+      <td>{{item.version.name}}</td>
+      <td>{{item.game_index}}</td>
+    </tr>
+  </table>
+
+
+</div>
+
+</div>
+<a [routerLink]="['/']">volve a la lista de pokemons</a>
