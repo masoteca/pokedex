@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CacheInterceptor } from './classes/cache-interceptor'
-import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MoveListComponent } from './components/move-list/move-list.component';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon
     AppComponent,
     PokemonListComponent,
     PokemonComponent,
-    PokemonListItemComponent
+    PokemonListItemComponent,
+    MoveListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [
     {

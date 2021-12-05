@@ -1,4 +1,4 @@
-<li>
+<li class="list-group-item">
   {{ puchamon.name }}
-  <a [routerLink]="['/pokemon', getIdPokemonFromUrl()]" > Ver Pokemon</a>
+  <a [routerLink]="['/' + type.toLowerCase() , getIdPokemonFromUrl()]" class="btn btn-primary"> Ver {{type}}</a>
 </li>

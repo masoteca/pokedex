@@ -8,12 +8,11 @@ import { Component,  Input } from '@angular/core';
 
 export class PokemonListItemComponent {
   @Input() puchamon!: {name: string; url: string};
-
+  @Input() type: string = '';
   constructor( ) { }
 
   getIdPokemonFromUrl(): string {
    let splited = this.puchamon.url.split('/');
    return splited[splited.length - 2];
   }
-
 }

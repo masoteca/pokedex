@@ -21,7 +21,6 @@ export class PokemonListComponent implements OnInit {
   getPokemonList(limit: number, offset:number): void {
     this.pokeapi.getPokemonList(limit, offset).subscribe(
       response => {
-        console.log(response);
         this.pokemons = response;
       });
   }

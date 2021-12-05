@@ -1,15 +1,21 @@
-<ul>
+
   <ng-container *ngIf="pokemons && pokemons.results.length > 0; else noPokemons">
-    <app-pokemon-list-item
-    *ngFor="let pokemon of pokemons.results"
-    [puchamon]="pokemon">
-    </app-pokemon-list-item>
-    <button (click)="reducetOffset(); getPokemonList(limit, offset)" *ngIf="offset > 0">Prev</button>
-    <button (click)="setOffset(i); getPokemonList(limit, offset)" *ngFor="let item of [].constructor(getMaxLinks()); let i = index"> {{i + 1}} </button>
-    <button (click)="incrementOffset(); getPokemonList(limit, offset)" *ngIf="pokemons && pokemons.next !== null">Next</button>
+    <ul class="list-group list-group-flush">
+      <app-pokemon-list-item
+      *ngFor="let pokemon of pokemons.results"
+      [puchamon]="pokemon"
+      [type]="'pokemon'">
+      </app-pokemon-list-item>
+     </ul>
+    <div class="my-2 btn-group" role="toolbar" aria-label="Toolbar con botones">
+      <button (click)="reducetOffset(); getPokemonList(limit, offset)" *ngIf="offset > 0" class="btn btn-outline-dark">Prev</button>
+      <button (click)="setOffset(i); getPokemonList(limit, offset)" *ngFor="let item of [].constructor(getMaxLinks()); let i = index" class="btn btn-outline-dark"> {{i + 1}} </button>
+      <button (click)="incrementOffset(); getPokemonList(limit, offset)" *ngIf="pokemons && pokemons.next !== null" class="btn btn-outline-dark">Next</button>
+    </div>
+
   </ng-container>
 
   <ng-template #noPokemons>
     <li>No Data Available <button (click)="getPokemonList(50,0)">Inicio</button></li>
   </ng-template>
-</ul>
+
