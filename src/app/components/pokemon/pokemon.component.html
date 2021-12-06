@@ -1,4 +1,4 @@
-<div class="card text-center mt-2" *ngIf="pokemon">
+<div class="card text-center mt-2" *ngIf="pokemon" (click)="genMesage()">
   <figure class="card-img-top">
     <img src="{{pokemonCoverImage()}}" alt="pokemon_image_front" style="width: 100px; height: 100px;" async>
   </figure>
