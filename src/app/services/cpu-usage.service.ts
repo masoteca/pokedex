@@ -15,4 +15,11 @@ export class CpuUsageService {
     return  this.socket.fromEvent<Array<CpuData>>('cpu_usage');
 
   }
+  connectWs(){
+    this.socket.connect();
+  }
+  disconnectWs() {
+    this.socket.disconnect();
+  }
+
 }

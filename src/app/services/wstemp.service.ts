@@ -14,6 +14,12 @@ export class WstempService {
     return  this.socket.fromEvent('temperatura');
 
   }
+  connectWs(){
+    this.socket.connect();
+  }
+  disconnectWs() {
+    this.socket.disconnect();
+  }
 
 
 }

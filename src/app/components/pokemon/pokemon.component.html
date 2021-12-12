@@ -1,50 +1,50 @@
 <div class="card text-center mt-2" *ngIf="pokemon">
-  <figure class="card-img-top">
-    <img src="{{pokemonCoverImage()}}" alt="pokemon_image_front" style="width: 100px; height: 100px;" async>
-  </figure>
+    <figure class="card-img-top">
+        <img src="{{pokemonCoverImage()}}" alt="pokemon_image_front pokemon-img">
+    </figure>
 
-<div class="card-body">
-  <div class="card-title">
-    <h3>{{pokemon.name}}</h3>
-      <p> Tipos: <span *ngFor="let tipo of pokemon.types">{{tipo.type.name}} </span></p>
-  </div>
+    <div class="card-body">
+        <div class="card-title">
+            <h3>{{pokemon.name}}</h3>
+            <p> Tipos: <span *ngFor="let tipo of pokemon.types">{{tipo.type.name}} </span></p>
+        </div>
 
-  <div class="card-text">
-    <h3> Movimientos que aprende</h3>
-    <ol class="list-group" *ngIf="pokemon.moves.length >0; else noMoves">
-      <li class="list-group-item" *ngFor="let mov of pokemon.moves">{{mov.move.name}}</li>
-    </ol>
-    <ng-template #noMoves>
-      <p>Sin registro de movimientos que aprende</p>
-    </ng-template>
+        <div class="card-text">
+            <h3> Movimientos que aprende</h3>
+            <ol class="list-group" *ngIf="pokemon.moves.length >0; else noMoves">
+                <li class="list-group-item" *ngFor="let mov of pokemon.moves">{{mov.move.name}}</li>
+            </ol>
+            <ng-template #noMoves>
+                <p>Sin registro de movimientos que aprende</p>
+            </ng-template>
 
-      <h3>Juegos en los que aparece</h3>
-      <table class="table">
-        <tr>
-          <th>#</th>
-          <th>Nombre</th>
-          <th>N Pokedex</th>
-        </tr>
-        <ng-container *ngIf="pokemon.game_indices.length > 0; else noGameIndex">
-          <tr *ngFor="let item of pokemon.game_indices; let i = index;" >
-            <td width="1%">{{i + 1}}</td>
-            <td>Pokemon {{item.version.name}}</td>
-            <td>{{item.game_index}}</td>
-          </tr>
-        </ng-container>
-      <ng-template  #noGameIndex>
-        <tr><td colspan="3">Sin registro de juegos</td></tr>
-      </ng-template>
-      </table>
-  </div>
+            <h3>Juegos en los que aparece</h3>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>N Pokedex</th>
+                </tr>
+                <ng-container *ngIf="pokemon.game_indices.length > 0; else noGameIndex">
+                    <tr *ngFor="let item of pokemon.game_indices; let i = index;">
+                        <td width="1%">{{i + 1}}</td>
+                        <td>Pokemon {{item.version.name}}</td>
+                        <td>{{item.game_index}}</td>
+                    </tr>
+                </ng-container>
+                <ng-template #noGameIndex>
+                    <tr>
+                        <td colspan="3">Sin registro de juegos</td>
+                    </tr>
+                </ng-template>
+            </table>
+        </div>
 
-  <div class="card-footer">
-    <a [routerLink]="['/pokemon/',getPrevPokeId()]" class="btn btn-primary mx-1" *ngIf="getPrevPokeId() > 1">Pokemon anterior</a>
-    <a [routerLink]="['/']" class="btn btn-primary mx-1">volver a la lista de pokemons</a>
-    <a [routerLink]="['/pokemon/', getNextPokeId()]" class="btn btn-primary mx-1">Proximo pokemon</a>
+        <div class="card-footer">
+            <a [routerLink]="['/pokemon/',getPrevPokeId()]" class="btn btn-primary mx-1" *ngIf="getPrevPokeId() > 1">Pokemon
+                anterior</a>
+            <a [routerLink]="['/pokemon/', getNextPokeId()]" class="btn btn-primary mx-1">Proximo pokemon</a>
+        </div>
+
     </div>
-
 </div>
-
-
-

@@ -20,7 +20,7 @@ export class MoveListComponent implements OnInit {
   }
 
   getMovesList(limit: number, offset:number): void {
-    this.pokeapi.getPokemonList(limit, offset).subscribe(
+    this.pokeapi.getMovementList(limit, offset).subscribe(
       response => {
         this.moves = response;
       });

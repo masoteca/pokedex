@@ -11,11 +11,11 @@ export class PokeMovesService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemonList(limit: number = 50, offset: number = 0): Observable<PokemonList> {
+  getMovementList(limit: number = 50, offset: number = 0): Observable<PokemonList> {
     return this.http.get<PokemonList>(`${this.url}?limit=${limit}&offset=${offset}` );
   }
 
-  getPokemon(id: number): Observable<any> {
+  getMovement(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`);
   }
 
