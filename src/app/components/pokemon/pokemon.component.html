@@ -1,4 +1,4 @@
-<div class="card text-center mt-2" *ngIf="pokemon" (click)="genMesage()">
+<div class="card text-center mt-2" *ngIf="pokemon">
   <figure class="card-img-top">
     <img src="{{pokemonCoverImage()}}" alt="pokemon_image_front" style="width: 100px; height: 100px;" async>
   </figure>
@@ -39,9 +39,9 @@
   </div>
 
   <div class="card-footer">
-    <a [routerLink]="['/']" class="btn btn-primary mx-1">Pokemon anterior</a>
+    <a [routerLink]="['/pokemon/',getPrevPokeId()]" class="btn btn-primary mx-1" *ngIf="getPrevPokeId() > 1">Pokemon anterior</a>
     <a [routerLink]="['/']" class="btn btn-primary mx-1">volver a la lista de pokemons</a>
-    <a [routerLink]="['/']" class="btn btn-primary mx-1">Proximo pokemon</a>
+    <a [routerLink]="['/pokemon/', getNextPokeId()]" class="btn btn-primary mx-1">Proximo pokemon</a>
     </div>
 
 </div>
