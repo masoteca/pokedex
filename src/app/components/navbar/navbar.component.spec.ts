@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
+import {AppComponent} from "../../app.component";
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -21,5 +22,11 @@ describe('NavbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('Navbar deberia decir Home', () => {
+    const fixture = TestBed.createComponent(NavbarComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('div .navbar')?.textContent).toContain('Home');
   });
 });

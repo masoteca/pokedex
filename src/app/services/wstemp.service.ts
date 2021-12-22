@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Socket } from 'ngx-socket-io'
+import { Socket } from 'ngx-socket-io'
 import { ServerTemp } from '../interfaces/server-temp';
 
 @Injectable({
