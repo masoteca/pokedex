@@ -63,7 +63,7 @@ export class DiceRollerComponent implements OnInit, AfterViewInit {
         return this.canvas.clientWidth / this.canvas.clientHeight;
     }
 
-    private divideToRoll() {
+    public divideToRoll() {
         cancelAnimationFrame(this.frameId);
         this.createScene();
         this.world.gravity.set(Math.random() * 20, -9.8, Math.random() * 20);
