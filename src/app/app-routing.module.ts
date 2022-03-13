@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {path: '',  loadChildren: () => import('./modules/pokedex/pokedex.module').then(m => m.PokedexModule) },
 
-  {path: 'graficos',  loadChildren: () => import('./rpi-dashboard/rpi-dashboard.module').then(m => m.RpiDashboardModule) },
+  {path: 'graficos',  loadChildren: () => import('./modules/rpi-dashboard/rpi-dashboard.module').then(m => m.RpiDashboardModule) },
 ];
 
 @NgModule({

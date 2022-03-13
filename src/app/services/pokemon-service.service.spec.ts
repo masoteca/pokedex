@@ -19,4 +19,8 @@ describe('PokemonServiceService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it("receive a list of pokemon", () => {
+    expect(service.getPokemonList()).toBeTruthy();
+  })
 });

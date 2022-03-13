@@ -10,9 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {RpiDashboardModule} from './rpi-dashboard/rpi-dashboard.module';
+import {RpiDashboardModule} from './modules/rpi-dashboard/rpi-dashboard.module';
 import {PokedexModule} from './modules/pokedex/pokedex.module';
 
+import {FormsModule} from "@angular/forms";
+import {RouterModule} from '@angular/router';
 const socketconfig: SocketIoConfig = { url: 'http://192.168.0.10:8988', options: {} };
 
 @NgModule({
@@ -26,8 +28,8 @@ const socketconfig: SocketIoConfig = { url: 'http://192.168.0.10:8988', options:
     HttpClientModule,
     AppRoutingModule,
     RpiDashboardModule,
-    PokedexModule
-
+    PokedexModule,
+    RouterModule
   ],
   providers: [
     {

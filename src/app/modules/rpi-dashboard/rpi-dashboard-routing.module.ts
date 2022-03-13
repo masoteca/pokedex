@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {GraficosRpiComponent} from "../components/graficos-rpi/graficos-rpi.component";
+import {GraficosRpiComponent} from "../../components/graficos-rpi/graficos-rpi.component";
 
 const routes: Routes = [
   {

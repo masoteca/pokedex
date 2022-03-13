@@ -8,6 +8,8 @@ import { PokemonComponent } from '../../components/pokemon/pokemon.component';
 import { PokemonListItemComponent } from '../../components/pokemon-list-item/pokemon-list-item.component';
 import { MoveListComponent } from '../../components/move-list/move-list.component';
 import { PokemonMovementComponent } from '../../components/pokemon-movement/pokemon-movement.component';
+import { DiceRollerComponent } from 'src/app/components/dice-roller/dice-roller.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -17,11 +19,13 @@ import { PokemonMovementComponent } from '../../components/pokemon-movement/poke
     PokemonComponent,
     PokemonListItemComponent,
     MoveListComponent,
-    PokemonMovementComponent
+    PokemonMovementComponent,
+    DiceRollerComponent
   ],
   imports: [
     CommonModule,
-    PokedexRoutingModule
+    PokedexRoutingModule,
+    FormsModule,
   ]
 })
 export class PokedexModule { }
