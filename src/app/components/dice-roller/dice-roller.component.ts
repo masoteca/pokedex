@@ -59,6 +59,13 @@ export class DiceRollerComponent implements OnInit, AfterViewInit {
     ngOnInit(): void {
     }
 
+    ngOnDestroy(): void {
+       if(this.gui.__folders['Physics']){
+           this.gui.removeFolder(this.gui.__folders['Physics']);
+
+       }
+        this.gui.destroy()
+    }
     private getAspectRatio() {
         return this.canvas.clientWidth / this.canvas.clientHeight;
     }
