@@ -1,5 +1,36 @@
-<div class="card">
-    <div class="card-content">
-        asd
+<div class="row">
+    <div class="card col-5 mx-auto">
+
+        <div class="card-content">
+            <h5 class="card-title"> {{ nombre()   }}</h5>
+
+            <h6 class="card-subtitle">Descripcion: {{descripcion()}}</h6>
+            <br>
+            <p class="card-text">
+                Tipo de ataque:{{movement?.type.name }} <br>
+                daño de ataque: {{movement?.damage_class.name }}<br>
+                Precision: {{movement?.accuracy ?? 0 }}  PP: {{movement?.pp}} Potencia: {{movement?.power}} Prioridad: {{movement?.priority ? 'Si': 'No'}}
+                <br>
+                <br>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="card col-5 mx-auto">
+        <div class="card-content">
+            <h5 class="card-title">Combo consurso</h5>
+            <p>Despues de</p>
+            <p class="card-text" *ngFor="let combo of movement?.contest_combos?.normal?.use_after">
+                <a [routerLink]="['/movimiento',combo.name ]">{{combo.name}}</a>
+            </p>
+            <p>Antes de</p>
+            <p class="card-text" *ngFor="let combo of movement?.contest_combos?.normal?.use_before">
+                <a [routerLink]="['/movimiento',combo.name ]">{{combo.name}}</a>
+            </p>
+            <h6 class="card-subtitle">Tipo movimiento</h6>
+            <p>{{ movement?.contest_type.name}}</p>
+        </div>
+
     </div>
 </div>

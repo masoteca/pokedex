@@ -15,7 +15,7 @@ export class PokeMovesService {
     return this.http.get<PokemonList>(`${this.url}?limit=${limit}&offset=${offset}` );
   }
 
-  getMovement(id: number): Observable<any> {
+  getMovement(id: number| string): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`);
   }
 

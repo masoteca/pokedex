@@ -12,7 +12,7 @@
         <div class="card-text">
             <h3> Movimientos que aprende</h3>
             <ol class="list-group" *ngIf="pokemon.moves.length >0; else noMoves">
-                <li class="list-group-item" *ngFor="let mov of pokemon.moves">{{mov.move.name}}</li>
+                <li class="list-group-item" *ngFor="let mov of pokemon.moves"><a [routerLink]="['/movimiento', mov.move.name]"> {{mov.move.name}}</a></li>
             </ol>
             <ng-template #noMoves>
                 <p>Sin registro de movimientos que aprende</p>
